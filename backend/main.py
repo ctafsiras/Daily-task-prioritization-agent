@@ -33,6 +33,10 @@ def run_my_agent(raw_tasks: str):
     return result
 
 
+@app.get("/")
+async def root():
+    return {"message": "FastAPI is running on Vercel!"}
+
 @app.post("/api/prioritize")
 async def prioritize_tasks(data: TaskList):
     print("🔥 REQUEST RECEIVED")
